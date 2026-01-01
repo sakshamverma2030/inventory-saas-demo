@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom global styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  /* Soft gradient background instead of plain white */
+  background: linear-gradient(to right, #f9fafb, #e0f2fe, #f9fafb);
+  color: #333;
+  min-height: 100vh;
+  transition: background 0.3s ease, color 0.3s ease; /* smooth mode switch */
+}
+
+/* Dark mode support */
+body.dark {
+  background: linear-gradient(to right, #1f2937, #111827, #1f2937);
+  color: #f3f4f6;
+}
+
+/* Headings */
+h1 {
+  color: #0066cc;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  transition: color 0.3s ease;
+}
+body.dark h1 {
+  color: #60a5fa; /* lighter blue in dark mode */
+}
+
+/* Utility for card-like containers */
+.container-card {
+  @apply bg-white rounded-lg shadow-md p-6;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+body.dark .container-card {
+  @apply bg-gray-800 text-gray-100 shadow-lg;
+}
